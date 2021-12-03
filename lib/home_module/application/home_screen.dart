@@ -36,6 +36,14 @@ class HomeScreen extends StatelessWidget {
                   }
                 },
               );
+            } else {
+              WidgetsBinding.instance!.addPostFrameCallback(
+                (_) {
+                  if (provider.isAccepted != true) {
+                    provider.isAccepted = true;
+                  }
+                },
+              );
             }
           }
           return SizedBox(
