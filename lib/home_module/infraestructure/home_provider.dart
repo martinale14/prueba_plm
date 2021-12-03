@@ -1,12 +1,12 @@
 import 'package:flutter/foundation.dart';
 
 class HomeProvider with ChangeNotifier, DiagnosticableTreeMixin {
-  bool _acceptedTerms = false;
+  bool _isShowing = false;
 
-  bool get acceptedTerms => _acceptedTerms;
+  bool get isShowing => _isShowing;
 
-  set acceptedTerms(bool acepptedTerms) {
-    _acceptedTerms = acceptedTerms;
+  set isShowing(bool isShowing) {
+    _isShowing = isShowing;
     notifyListeners();
   }
 }

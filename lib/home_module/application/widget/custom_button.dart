@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:plm_prueba/utils/colors.dart';
 import 'package:plm_prueba/utils/dimens.dart';
 
-class RegisterButton extends StatelessWidget {
-  const RegisterButton({Key? key}) : super(key: key);
+class CustomButton extends StatelessWidget {
+  const CustomButton({
+    Key? key,
+    required this.text,
+    required this.gradient,
+    required this.onTap,
+  }) : super(key: key);
+
+  final String text;
+  final LinearGradient gradient;
+  final Function() onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +19,7 @@ class RegisterButton extends StatelessWidget {
       height: 50,
       width: 200,
       decoration: BoxDecoration(
-          gradient: PlmColors.linearGradient,
+          gradient: gradient,
           borderRadius: Dimens.borderRadius(100),
           boxShadow: [
             BoxShadow(
@@ -25,7 +33,7 @@ class RegisterButton extends StatelessWidget {
         borderRadius: Dimens.borderRadius(100),
         child: InkWell(
           borderRadius: Dimens.borderRadius(100),
-          onTap: () {},
+          onTap: onTap,
           child: Container(
             alignment: Alignment.center,
             height: 50,
@@ -36,16 +44,16 @@ class RegisterButton extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 Text(
-                  'Register',
-                  style: TextStyle(
+                  text,
+                  style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
                     color: Colors.white,
                   ),
                 ),
-                Icon(
+                const Icon(
                   Icons.navigate_next,
                   color: Colors.white,
                 ),
