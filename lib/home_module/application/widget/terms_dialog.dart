@@ -88,6 +88,7 @@ class TermsDialog extends StatelessWidget {
                     if (value) {
                       try {
                         await PreferencesService.saveAcceptedTerms(value);
+                        provider.isAccepted = true;
                         Fluttertoast.showToast(
                           msg: 'Terms Accepted',
                           backgroundColor: Colors.red,

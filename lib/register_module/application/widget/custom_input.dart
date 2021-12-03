@@ -58,12 +58,13 @@ class CustomInput extends StatelessWidget {
                             colors: [Colors.red, Colors.red])),
               ),
               Container(
-                padding: Dimens.symetric(h: 20, v: 10),
+                padding: Dimens.symetric(h: 20, v: 0),
                 width: Dimens.scaleX(context, .8),
                 height: 50,
                 decoration: BoxDecoration(
-                    borderRadius: Dimens.borderRadius(100),
-                    color: Colors.white),
+                  borderRadius: Dimens.borderRadius(100),
+                  color: Colors.white,
+                ),
                 child: TextField(
                   controller: controller,
                   onChanged: (value) {
@@ -75,7 +76,7 @@ class CustomInput extends StatelessWidget {
                   keyboardType: type ?? TextInputType.text,
                   style: TextStyle(
                     color: Colors.black.withOpacity(.7),
-                    fontSize: 20,
+                    fontSize: 18,
                   ),
                   decoration: InputDecoration(
                     border: InputBorder.none,

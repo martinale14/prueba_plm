@@ -55,7 +55,7 @@ class HomeScreen extends StatelessWidget {
                   text: 'Register',
                   gradient: PlmColors.linearGradient,
                   onTap: () {
-                    if (snapshot.data!) {
+                    if (provider.isAccepted) {
                       Navigator.of(context).push(
                         MaterialPageRoute(builder: (BuildContext context) {
                           return RegisterInjection.injection();
